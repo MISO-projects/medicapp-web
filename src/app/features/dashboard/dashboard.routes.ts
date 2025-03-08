@@ -4,9 +4,7 @@ const dashboardRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./reminders-list/reminders-list.component').then(
-        (m) => m.RemindersListComponent
-      ),
+      import('./home/home.component').then((m) => m.HomeComponent),
   },
 ];
 
