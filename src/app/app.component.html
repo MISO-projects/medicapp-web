@@ -1,2 +1,20 @@
-<app-sidenav> <app-reminders-list></app-reminders-list></app-sidenav>
-<router-outlet />
+<app-sidenav>
+  <div class="app-container">
+    <app-app-bar (patientSelected)="onPatientSelected($event)"></app-app-bar>
+
+    <div class="main-content">
+      <div class="patient-info-card" *ngIf="selectedPatient">
+        <h3>Medicamentos para {{ selectedPatient.name }}</h3>
+        <p>{{ selectedPatient.age }} años</p>
+        <p>{{ selectedPatient.phone }}</p>
+      </div>
+
+      <div class="medication-reminders">
+        <h2>Today's Medication Reminders</h2>
+        <p>Medication reminders will be displayed here</p>
+        <app-reminders-list></app-reminders-list>
+      </div>
+    </div>
+  </div>
+</app-sidenav>
+<router-outlet></router-outlet>

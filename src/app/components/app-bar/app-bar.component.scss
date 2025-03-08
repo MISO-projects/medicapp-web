@@ -1,0 +1,23 @@
+.app-bar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-selector {
+  flex-grow: 1;
+  max-width: 300px;
+  
+  mat-form-field {
+    width: 100%;
+    // Override material form field to look better in toolbar
+    ::ng-deep .mat-form-field-wrapper {
+      margin-bottom: -1.25em;
+    }
+  }
+}
+
+.account-menu {
+  margin-left: 16px;
+}
