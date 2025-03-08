@@ -3,16 +3,10 @@
     <app-app-bar (patientSelected)="onPatientSelected($event)"></app-app-bar>
 
     <div class="main-content">
-      <div class="patient-info-card" *ngIf="selectedPatient">
-        <div class="patient-image">
-          <img [src]="selectedPatient.photo" alt="Patient" />
-        </div>
-        <div class="patient-details">
-          <h4>Medicamentos para {{ selectedPatient.name }}</h4>
-          <p>{{ selectedPatient.age }} años</p>
-          <p>{{ selectedPatient.phone }}</p>
-        </div>
-      </div>
+      <app-patient-info
+        [selectedPatient]="selectedPatient"
+        *ngIf="selectedPatient"
+      ></app-patient-info>
 
       <div>
         <h4>Medicamentos para hoy</h4>

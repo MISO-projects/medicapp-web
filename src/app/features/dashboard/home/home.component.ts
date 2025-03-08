@@ -4,6 +4,7 @@ import { AppBarComponent } from '../../../components/app-bar/app-bar.component';
 import { SidenavComponent } from '../../../components/sidenav/sidenav.component';
 import { Patient } from '../../../models/patient.model';
 import { RemindersListComponent } from '../reminders-list/reminders-list.component';
+import { PatientInfoComponent } from '../../../components/patient-info/patient-info.component';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { RemindersListComponent } from '../reminders-list/reminders-list.compone
     SidenavComponent,
     RemindersListComponent,
     AppBarComponent,
+    PatientInfoComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
