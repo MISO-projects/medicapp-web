@@ -1,0 +1,19 @@
+<app-sidenav>
+  <div class="app-container">
+    <app-app-bar (patientSelected)="onPatientSelected($event)"></app-app-bar>
+
+    <div class="main-content">
+      <div class="patient-info-card" *ngIf="selectedPatient">
+        <h3>Medicamentos para {{ selectedPatient.name }}</h3>
+        <p>{{ selectedPatient.age }} años</p>
+        <p>{{ selectedPatient.phone }}</p>
+      </div>
+
+      <div>
+        <h3>Medicamentos para hoy</h3>
+        <p>Acá se muestran los medicamentos con recordatorios para hoy</p>
+        <app-reminders-list></app-reminders-list>
+      </div>
+    </div>
+  </div>
+</app-sidenav>
