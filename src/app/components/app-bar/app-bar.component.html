@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
   <div class="app-bar-container">
     <div class="patient-selector">
-      <mat-form-field appearance="outline">
-        <mat-label>Select Patient</mat-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar paciente</mat-label>
         <mat-select [(value)]="selectedPatient" (selectionChange)="onPatientSelected($event.value)">
           <mat-option *ngFor="let patient of patients" [value]="patient">
+          <mat-icon>person</mat-icon>
             {{ patient.name }}
           </mat-option>
         </mat-select>

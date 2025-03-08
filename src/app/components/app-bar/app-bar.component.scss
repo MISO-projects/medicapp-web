@@ -10,7 +10,6 @@
   max-width: 300px;
   
   mat-form-field {
-    width: 100%;
     // Override material form field to look better in toolbar
     ::ng-deep .mat-form-field-wrapper {
       margin-bottom: -1.25em;
