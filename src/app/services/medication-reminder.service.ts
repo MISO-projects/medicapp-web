@@ -9,7 +9,13 @@ import { mockReminders } from './mocks/medication-reminder.mock';
 export class MedicationReminderService {
   constructor() {}
 
-  getReminders(): Observable<MedicationReminder[]> {
-    return of(mockReminders);
+  getReminders(patientId?: number): Observable<MedicationReminder[]> {
+    if (patientId) {
+      const filteredReminders = mockReminders.filter(
+        (reminder) => reminder.patientId === patientId
+      );
+      return of(filteredReminders);
+    }
+    return of([]);
   }
 }

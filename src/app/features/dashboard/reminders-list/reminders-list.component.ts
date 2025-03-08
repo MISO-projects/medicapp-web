@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReminderListItemComponent } from '../reminder-list-item/reminder-list-item.component';
 import { MedicationReminder } from '../../../models/medication-reminder.model';
 import { MedicationReminderService } from '../../../services/medication-reminder.service';
+import { Patient } from '../../../models/patient.model';
 
 @Component({
   selector: 'app-reminders-list',
@@ -11,7 +12,9 @@ import { MedicationReminderService } from '../../../services/medication-reminder
   standalone: true,
   imports: [CommonModule, ReminderListItemComponent],
 })
-export class RemindersListComponent implements OnInit {
+export class RemindersListComponent implements OnInit, OnChanges {
+  @Input() selectedPatient: Patient | null = null;
+  
   reminders: MedicationReminder[] = [];
 
   constructor(private medicationRemindersService: MedicationReminderService) {}
@@ -20,8 +23,16 @@ export class RemindersListComponent implements OnInit {
     this.loadReminders();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['selectedPatient']) {
+      this.loadReminders();
+    }
+  }
+
   loadReminders(): void {
-    this.medicationRemindersService.getReminders().subscribe(
+    const patientId = this.selectedPatient?.id;
+    
+    this.medicationRemindersService.getReminders(patientId).subscribe(
       (reminders) => {
         this.reminders = reminders;
       },
