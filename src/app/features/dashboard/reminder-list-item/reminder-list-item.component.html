@@ -1,0 +1,20 @@
+<div class="reminder-card">
+  <div class="medication-image">
+    <img [src]="getMedicationImage()" alt="Medication" />
+  </div>
+  
+  <div class="medication-info">
+    <div class="medication-name">{{ reminder.name }}</div>
+    <div class="medication-time">{{ reminder.time }}</div>
+  </div>
+  
+  <div class="medication-details">
+    <div class="medication-quantity">{{ reminder.quantity }}</div>
+    <div class="medication-concentration">{{ reminder.concentration }}</div>
+  </div>
+  
+  <div class="medication-status">
+    <mat-icon>{{ getStatusIcon() }}</mat-icon>
+    <span>{{ reminder.status }}</span>
+  </div>
+</div>

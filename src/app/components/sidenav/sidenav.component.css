@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.sidenav {
+  width: 250px;
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
