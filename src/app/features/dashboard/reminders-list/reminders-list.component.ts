@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReminderListItemComponent } from '../reminder-list-item/reminder-list-item.component';
 import { MedicationReminder } from '../../../models/medication-reminder.model';
+import { MedicationReminderService } from '../../../services/medication-reminder.service';
 
 @Component({
   selector: 'app-reminders-list',
@@ -13,35 +14,20 @@ import { MedicationReminder } from '../../../models/medication-reminder.model';
 export class RemindersListComponent implements OnInit {
   reminders: MedicationReminder[] = [];
 
+  constructor(private medicationRemindersService: MedicationReminderService) {}
+
   ngOnInit(): void {
-    this.reminders = [
-      {
-        id: 1,
-        name: 'Acetaminofén',
-        time: '8:00 AM',
-        quantity: '1 tableta',
-        concentration: '500 mg',
-        type: 'tablet',
-        status: 'tomada',
+    this.loadReminders();
+  }
+
+  loadReminders(): void {
+    this.medicationRemindersService.getReminders().subscribe(
+      (reminders) => {
+        this.reminders = reminders;
       },
-      {
-        id: 2,
-        name: 'Amoxicilina',
-        time: '12:00 PM',
-        quantity: '1 cápsula',
-        concentration: '250 mg',
-        type: 'capsule',
-        status: 'pendiente',
-      },
-      {
-        id: 3,
-        name: 'Ibuprofeno',
-        time: '6:00 PM',
-        quantity: '2 tabletas',
-        concentration: '200 mg',
-        type: 'tablet',
-        status: 'no tomada',
-      },
-    ];
+      (error) => {
+        console.error('Error fetching reminders:', error);
+      }
+    );
   }
 }

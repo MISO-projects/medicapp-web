@@ -23,6 +23,5 @@ export class HomeComponent {
 
   onPatientSelected(patient: Patient): void {
     this.selectedPatient = patient;
-    console.log('Selected patient:', patient);
   }
 }

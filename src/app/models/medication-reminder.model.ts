@@ -6,4 +6,5 @@ export interface MedicationReminder {
   concentration: string;
   type: 'tablet' | 'capsule';
   status: 'tomada' | 'no tomada' | 'pendiente';
+  patientId: number;
 }

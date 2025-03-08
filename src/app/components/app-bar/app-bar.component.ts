@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Patient } from '../../models/patient.model';
+import { PatientService } from '../../services/patient.service';
 
 @Component({
   selector: 'app-app-bar',
@@ -31,19 +32,25 @@ export class AppBarComponent implements OnInit {
 
   @Output() patientSelected = new EventEmitter<Patient>();
 
-  constructor() {}
+  constructor(private patientService: PatientService) {}
 
   ngOnInit(): void {
-    this.patients = [
-      { id: 1, name: 'Manuel Ramírez', age: 68, phone: '+57 311 123 4567' },
-      { id: 2, name: 'Teresa Hernandez', age: 82, phone: '+57 311 321 4567' },
-      { id: 3, name: 'Vicente Camargo', age: 70, phone: '+313 456 7890' },
-    ];
-
-    if (this.patients.length > 0) {
-      this.selectedPatient = this.patients[0];
-      this.patientSelected.emit(this.selectedPatient);
-    }
+    this.loadPatients();
+  }
+  
+  loadPatients(): void {
+    this.patientService.getPatients().subscribe(
+      (patients) => {
+        this.patients = patients;
+        if (this.patients.length > 0) {
+          this.selectedPatient = this.patients[0];
+          this.patientSelected.emit(this.selectedPatient);
+        }
+      },
+      (error) => {
+        console.error('Error fetching patients:', error);
+      }
+    );
   }
 
   onPatientSelected(patient: Patient): void {
