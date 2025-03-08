@@ -3,8 +3,11 @@
     <img [src]="selectedPatient?.photo" alt="Patient" />
   </div>
   <div class="patient-details">
-    <h4>Medicamentos para {{ selectedPatient?.name }}</h4>
-    <p>{{ selectedPatient?.age }} años</p>
-    <p>{{ selectedPatient?.phone }}</p>
+    <h5>Medicamentos para {{ selectedPatient?.name }}</h5>
+    <p class="patient-age">{{ selectedPatient?.age }} años</p>
+    <p class="patient-phone">{{ selectedPatient?.phone }}</p>
+    <button mat-flat-button color="primary" (click)="onSyncPatient()">
+      Sincronizar
+    </button>
   </div>
 </div>
