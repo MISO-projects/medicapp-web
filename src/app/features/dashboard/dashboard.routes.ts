@@ -4,7 +4,7 @@ const dashboardRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
+      import('./dashboard.component').then((m) => m.DashboardComponent),
   },
 ];
 
