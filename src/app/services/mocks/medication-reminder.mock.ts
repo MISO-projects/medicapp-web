@@ -9,7 +9,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '200 mg',
     type: 'tablet',
-    status: 'tomada',
+    status: 'Tomada',
     patientId: mockPatients[0].id,
   },
   {
@@ -19,7 +19,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '250 mg',
     type: 'tablet',
-    status: 'no tomada',
+    status: 'No tomada',
     patientId: mockPatients[0].id,
   },
   {
@@ -29,7 +29,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 capsula',
     concentration: '200 mg',
     type: 'capsule',
-    status: 'pendiente',
+    status: 'Pendiente',
     patientId: mockPatients[0].id,
   },
   {
@@ -39,7 +39,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '200 mg',
     type: 'tablet',
-    status: 'tomada',
+    status: 'Tomada',
     patientId: mockPatients[1].id,
   },
   {
@@ -49,7 +49,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '200 mg',
     type: 'tablet',
-    status: 'tomada',
+    status: 'Tomada',
     patientId: mockPatients[1].id,
   },
   {
@@ -59,7 +59,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '250 mg',
     type: 'tablet',
-    status: 'no tomada',
+    status: 'No tomada',
     patientId: mockPatients[2].id,
   },
   {
@@ -69,7 +69,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 capsula',
     concentration: '200 mg',
     type: 'capsule',
-    status: 'tomada',
+    status: 'Tomada',
     patientId: mockPatients[2].id,
   },
   {
@@ -79,7 +79,7 @@ export const mockReminders: MedicationReminder[] = [
     quantity: '1 tableta',
     concentration: '200 mg',
     type: 'tablet',
-    status: 'pendiente',
+    status: 'Pendiente',
     patientId: mockPatients[2].id,
   },
 ];

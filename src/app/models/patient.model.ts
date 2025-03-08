@@ -3,4 +3,5 @@ export interface Patient {
   name: string;
   age: number;
   phone: string;
+  photo: string;
 }

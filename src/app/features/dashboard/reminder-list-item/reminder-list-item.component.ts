@@ -15,11 +15,11 @@ export class ReminderListItemComponent {
 
   getStatusIcon(): string {
     switch (this.reminder.status) {
-      case 'tomada':
-        return 'check_circle';
-      case 'no tomada':
-        return 'cancel';
-      case 'pendiente':
+      case 'Tomada':
+        return 'check';
+      case 'No tomada':
+        return 'error';
+      case 'Pendiente':
         return 'schedule';
       default:
         return '';

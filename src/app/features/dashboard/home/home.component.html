@@ -4,14 +4,21 @@
 
     <div class="main-content">
       <div class="patient-info-card" *ngIf="selectedPatient">
-        <h3>Medicamentos para {{ selectedPatient.name }}</h3>
-        <p>{{ selectedPatient.age }} años</p>
-        <p>{{ selectedPatient.phone }}</p>
+        <div class="patient-image">
+          <img [src]="selectedPatient.photo" alt="Patient" />
+        </div>
+        <div class="patient-details">
+          <h4>Medicamentos para {{ selectedPatient.name }}</h4>
+          <p>{{ selectedPatient.age }} años</p>
+          <p>{{ selectedPatient.phone }}</p>
+        </div>
       </div>
 
       <div>
-        <h3>Medicamentos para hoy</h3>
-        <app-reminders-list [selectedPatient]="selectedPatient"></app-reminders-list>
+        <h4>Medicamentos para hoy</h4>
+        <app-reminders-list
+          [selectedPatient]="selectedPatient"
+        ></app-reminders-list>
       </div>
     </div>
   </div>
