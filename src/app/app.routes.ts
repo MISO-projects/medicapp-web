@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: 'medicamentos',
     loadChildren: () => import('./features/medication/medication.routes'),
   },
+  {
+    path: 'pacientes',
+    loadChildren: () => import('./features/patients/patients.routes'),
+  },
 ];

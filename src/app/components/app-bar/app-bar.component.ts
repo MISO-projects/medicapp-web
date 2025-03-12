@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +31,7 @@ export class AppBarComponent implements OnInit {
   selectedPatient: Patient | null = null;
 
   @Output() patientSelected = new EventEmitter<Patient>();
+  @Input() showPatientSelector: boolean = true;
 
   constructor(private patientService: PatientService) {}
 
