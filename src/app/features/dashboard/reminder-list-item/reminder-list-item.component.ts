@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MedicationReminder } from '../../../models/medication-reminder.model';
+import { MedicationReminderService } from '../../../services/medication-reminder.service';
 
 @Component({
   selector: 'app-reminder-list-item',
@@ -12,6 +13,10 @@ import { MedicationReminder } from '../../../models/medication-reminder.model';
 })
 export class ReminderListItemComponent {
   @Input() reminder!: MedicationReminder;
+
+  constructor(
+    private readonly medicationReminderService: MedicationReminderService
+  ) {}
 
   getStatusIcon(): string {
     switch (this.reminder.status) {
@@ -27,8 +32,6 @@ export class ReminderListItemComponent {
   }
 
   getMedicationImage(): string {
-    return this.reminder.type === 'tablet'
-      ? 'https://storage.googleapis.com/medicapp/tablet.png'
-      : 'https://storage.googleapis.com/medicapp/capsule.png';
+    return this.medicationReminderService.getMedicationImage(this.reminder);
   }
 }

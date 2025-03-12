@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./features/dashboard/dashboard.routes'),
   },
+  {
+    path: 'medicamentos',
+    loadChildren: () => import('./features/medication/medication.routes'),
+  },
 ];

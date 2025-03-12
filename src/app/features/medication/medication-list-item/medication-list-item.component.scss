@@ -1,0 +1,57 @@
+.medication-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.medication-image {
+  margin-right: 16px;
+
+  img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    object-fit: contain;
+  }
+}
+
+.medication-info {
+  flex: 1;
+  max-width: 30%;
+
+  .medication-name {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .medication-concentration {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .medication-reminders {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      margin-right: 4px;
+      color: #666;
+    }
+
+    span {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+}
+
+.medication-menu {
+  margin-left: auto;
+}

@@ -18,4 +18,20 @@ export class MedicationReminderService {
     }
     return of([]);
   }
+
+  getMedications(patientId?: number): Observable<MedicationReminder[]> {
+    if (patientId) {
+      const filteredReminders = mockReminders.filter(
+        (reminder) => reminder.patientId === patientId
+      );
+      return of(filteredReminders);
+    }
+    return of([]);
+  }
+
+  getMedicationImage({ type }: MedicationReminder): string {
+    return type === 'tablet'
+      ? 'https://storage.googleapis.com/medicapp/tablet.png'
+      : 'https://storage.googleapis.com/medicapp/capsule.png';
+  }
 }
