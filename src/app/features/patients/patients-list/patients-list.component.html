@@ -1,0 +1,7 @@
+<div class="patients-container">
+  <div class="patients-list">
+    @for(patient of patients; track patient.id){
+    <app-patients-list-item [patient]="patient"></app-patients-list-item>
+    }
+  </div>
+</div>

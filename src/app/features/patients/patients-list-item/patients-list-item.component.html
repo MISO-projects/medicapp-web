@@ -1,0 +1,32 @@
+<div class="patient-card">
+  <div class="patient-image">
+    <img [src]="patient.photo" alt="Patient" />
+  </div>
+
+  <div class="patient-info">
+    <div class="patient-name">{{ patient.name }}</div>
+    <div class="patient-age">{{ patient.age }} años</div>
+  </div>
+
+  <div class="patient-menu">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="patientMenu"
+      aria-label="Patient menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #patientMenu="matMenu">
+      <button mat-menu-item (click)="onEditPatient()">
+        <mat-icon>edit</mat-icon>
+        <span>Editar</span>
+      </button>
+      <button mat-menu-item (click)="onDeletePatient()">
+        <mat-icon>delete</mat-icon>
+        <span>Eliminar</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>
+
