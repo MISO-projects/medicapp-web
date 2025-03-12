@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+.sidenav {
+  width: 250px;
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
@@ -15,4 +19,19 @@
 
 .sidenav-header {
   font-weight: 500;
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  .mat-icon {
+    margin-right: 16px;
+  }
+}
+
+.sidenav-content {
+  padding: 12px 8px;
 }

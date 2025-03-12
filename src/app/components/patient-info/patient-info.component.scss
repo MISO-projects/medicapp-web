@@ -1,0 +1,34 @@
+.patient-image {
+  margin-right: 16px;
+  
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 28px;
+    object-fit: cover; 
+  }
+}
+
+.patient-info-card {
+  margin-bottom: 16px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: flex-start;
+
+  .patient-details {
+    flex: 1;
+
+    .patient-age {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .patient-phone {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+<app-sidenav>
+  <div class="app-container">
+    <app-app-bar (patientSelected)="onPatientSelected($event)"></app-app-bar>
+
+    <div class="main-content">
+      <app-patient-info
+        [selectedPatient]="selectedPatient"
+        *ngIf="selectedPatient"
+      ></app-patient-info>
+
+      <div>
+        <h5>Medicamentos para hoy</h5>
+        <app-reminders-list
+          [selectedPatient]="selectedPatient"
+        ></app-reminders-list>
+      </div>
+    </div>
+  </div>
+</app-sidenav>

@@ -1,1 +1,7 @@
-<p>reminders-list works!</p>
+<div class="reminders-container">
+  <div class="reminders-list">
+    @for(reminder of reminders; track reminder.id){
+    <app-reminder-list-item [reminder]="reminder" />
+    }
+  </div>
+</div>

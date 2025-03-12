@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { RemindersListComponent } from './features/dashboard/reminders-list/reminders-list.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidenavComponent, RemindersListComponent],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'medicapp-web';
-}
+export class AppComponent {}
