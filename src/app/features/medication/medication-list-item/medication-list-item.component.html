@@ -1,0 +1,35 @@
+<div class="medication-card">
+  <div class="medication-image">
+    <img [src]="getMedicationImage()" alt="Medication" />
+  </div>
+
+  <div class="medication-info">
+    <div class="medication-name">{{ medication.name }}</div>
+    <div class="medication-concentration">{{ medication.concentration }}</div>
+    <div class="medication-reminders">
+      <mat-icon>schedule</mat-icon>
+      <span>3 recordatorios</span>
+    </div>
+  </div>
+
+  <div class="medication-menu">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="medicationMenu"
+      aria-label="Medication menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #medicationMenu="matMenu">
+      <button mat-menu-item (click)="onEditMedication()">
+        <mat-icon>edit</mat-icon>
+        <span>Editar</span>
+      </button>
+      <button mat-menu-item (click)="onDeleteMedication()">
+        <mat-icon>delete</mat-icon>
+        <span>Eliminar</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

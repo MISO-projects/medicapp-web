@@ -1,0 +1,7 @@
+<div class="medications-container">
+  <div class="medications-list">
+    @for(medication of medications; track medication.id){
+      <app-medication-list-item [medication]="medication" />
+    }
+  </div>
+</div>
