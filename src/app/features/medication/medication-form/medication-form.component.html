@@ -1,0 +1,97 @@
+<div class="medication-header">
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon>arrow_backward</mat-icon>
+  </button>
+</div>
+<div class="medication-form">
+  <mat-card>
+    <mat-card-header class="centered-header">
+      <mat-card-title class="form-title">Agregar medicamento</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="medicationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Medicamento</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Ingrese el nombre del medicamento"
+          />
+          <mat-error *ngIf="hasError('name', 'required')"
+            >El nombre es requerido</mat-error
+          >
+          <mat-error *ngIf="hasError('name', 'minlength')"
+            >El nombre debe tener al menos 3 caracteres</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>¿Por qué la toma?</mat-label>
+          <input
+            matInput
+            formControlName="reason"
+            placeholder="Indique el motivo"
+          />
+          <mat-error *ngIf="hasError('reason', 'required')"
+            >El motivo es requerido</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Presentación</mat-label>
+          <mat-select formControlName="presentation">
+            <mat-option value="capsule">Cápsula</mat-option>
+            <mat-option value="tablet">Tableta</mat-option>
+          </mat-select>
+          <mat-error *ngIf="hasError('presentation', 'required')"
+            >La presentación es requerida</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Periodicidad</mat-label>
+          <mat-select formControlName="frequency">
+            <mat-option value="daily">Diaria</mat-option>
+            <mat-option value="every2days">Cada 2 días</mat-option>
+            <mat-option value="weekly">Semanal</mat-option>
+            <mat-option value="biweekly">Quincenal</mat-option>
+            <mat-option value="monthly">Mensual</mat-option>
+          </mat-select>
+          <mat-error *ngIf="hasError('frequency', 'required')"
+            >La periodicidad es requerida</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Inicio</mat-label>
+          <input
+            matInput
+            formControlName="startDate"
+            [matDatepicker]="picker"
+            placeholder="Indique fecha de inicio"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="hasError('startDate', 'required')"
+            >La fecha de inicio es requerida</mat-error
+          >
+        </mat-form-field>
+
+        <div class="button-container">
+          <button
+            mat-flat-button
+            color="primary"
+            type="button"
+            [disabled]="!medicationForm.valid"
+            (click)="goBack()"
+          >
+            Agregar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
