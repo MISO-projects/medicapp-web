@@ -8,18 +8,7 @@
         *ngIf="selectedPatient"
       ></app-patient-info>
 
-      <div class="medication-header">
-        <h5>Medicamentos agregados</h5>
-        <mat-icon>arrow_forward</mat-icon>
-        <button mat-flat-button color="primary" (click)="onAddMedication()">
-          <mat-icon>add</mat-icon>
-          Agregar
-        </button>
-      </div>
-
-      <app-medication-list
-        [selectedPatient]="selectedPatient"
-      ></app-medication-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </app-sidenav>
