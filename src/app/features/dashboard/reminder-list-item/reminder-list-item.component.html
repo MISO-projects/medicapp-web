@@ -13,7 +13,7 @@
     <div class="medication-concentration">{{ reminder.concentration }}</div>
   </div>
   
-  <div class="medication-status">
+  <div class="medication-status" [ngStyle]="{'background-color': getStatusColor()}">
     <mat-icon>{{ getStatusIcon() }}</mat-icon>
     <span>{{ reminder.status }}</span>
   </div>

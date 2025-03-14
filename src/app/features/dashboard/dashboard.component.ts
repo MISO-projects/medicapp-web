@@ -5,6 +5,7 @@ import { SidenavComponent } from '../../components/sidenav/sidenav.component';
 import { Patient } from '../../models/patient.model';
 import { RemindersListComponent } from './reminders-list/reminders-list.component';
 import { PatientInfoComponent } from '../../components/patient-info/patient-info.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,6 +16,7 @@ import { PatientInfoComponent } from '../../components/patient-info/patient-info
     RemindersListComponent,
     AppBarComponent,
     PatientInfoComponent,
+    MatIconModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

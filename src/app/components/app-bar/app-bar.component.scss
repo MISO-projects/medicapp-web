@@ -1,4 +1,5 @@
 .app-bar-container {
+  background-color: var(--sys-surface);
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -13,6 +14,10 @@
     // Override material form field to look better in toolbar
     ::ng-deep .mat-form-field-wrapper {
       margin-bottom: -1.25em;
+    }
+
+    ::ng-deep .mat-mdc-text-field-wrapper {
+      background-color: var(--sys-secondary-container);
     }
   }
 }

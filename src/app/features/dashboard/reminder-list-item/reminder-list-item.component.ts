@@ -31,6 +31,19 @@ export class ReminderListItemComponent {
     }
   }
 
+  getStatusColor(): string {
+    switch (this.reminder.status) {
+      case 'Tomada':
+        return 'var(--sys-primary-container, #baecca)';
+      case 'No tomada':
+        return 'var(--sys-error-container, #ffdad6)';
+      case 'Pendiente':
+        return 'var(--sys-tertiary-container, #ffedcb)';
+      default:
+        return 'transparent';
+    }
+  }
+
   getMedicationImage(): string {
     return this.medicationReminderService.getMedicationImage(this.reminder);
   }
