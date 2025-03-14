@@ -1,0 +1,73 @@
+.reminder-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--sys-surface);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  margin-bottom: 12px;
+  position: relative; 
+}
+
+.medication-image {
+  margin-right: 16px;
+  
+  img {
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    object-fit: contain;
+  }
+}
+
+.medication-info {
+  flex: 1;
+  max-width: 30%; 
+  
+  .medication-name {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  
+  .medication-time {
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+.medication-details {
+  display: flex;
+  flex-direction: column;
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  
+  .medication-quantity {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .medication-concentration {
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+.medication-status {
+  margin-left: auto; 
+  border-radius: 8px;
+  padding: 2px;
+  
+  display: flex;
+  align-items: center;
+  
+  mat-icon {
+    margin-right: 4px;
+  }
+  
+  span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

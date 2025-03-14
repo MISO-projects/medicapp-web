@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <div class="app-bar-container">
+    <div *ngIf="showPatientSelector" class="patient-selector">
+      <mat-form-field appearance="fill">
+        <mat-label>Seleccionar paciente</mat-label>
+        <mat-select [(value)]="selectedPatient" (selectionChange)="onPatientSelected($event.value)">
+          <mat-option *ngFor="let patient of patients" [value]="patient">
+          <mat-icon>person</mat-icon>
+            {{ patient.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="account-menu">
+      <button mat-icon-button [matMenuTriggerFor]="accountMenu" aria-label="User account menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #accountMenu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>

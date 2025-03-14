@@ -1,0 +1,13 @@
+<div class="patient-info-card">
+  <div class="patient-image">
+    <img [src]="selectedPatient?.photo" alt="Patient" />
+  </div>
+  <div class="patient-details">
+    <h5>Tablero para {{ selectedPatient?.name }}</h5>
+    <p class="patient-age">{{ selectedPatient?.age }} años</p>
+    <p class="patient-phone">{{ selectedPatient?.phone }}</p>
+    <button mat-flat-button color="primary" (click)="onSyncPatient()">
+      Sincronizar
+    </button>
+  </div>
+</div>

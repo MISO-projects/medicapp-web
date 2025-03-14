@@ -1,0 +1,44 @@
+.patient-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--sys-surface);
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.patient-image {
+  margin-right: 16px;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+}
+
+.patient-info {
+  flex: 1;
+  max-width: 30%;
+
+  .patient-name {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .patient-age {
+    color: #666;
+    font-size: 14px;
+  }
+
+}
+
+.patient-menu {
+  margin-left: auto;
+}

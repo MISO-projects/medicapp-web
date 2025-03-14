@@ -1,0 +1,14 @@
+<app-sidenav>
+  <div class="app-container">
+    <app-app-bar (patientSelected)="onPatientSelected($event)"></app-app-bar>
+
+    <div class="main-content">
+      <app-patient-info
+        [selectedPatient]="selectedPatient"
+        *ngIf="selectedPatient"
+      ></app-patient-info>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</app-sidenav>

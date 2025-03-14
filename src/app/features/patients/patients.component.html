@@ -1,0 +1,22 @@
+<app-sidenav>
+  <div class="app-container">
+    <app-app-bar [showPatientSelector]="false"></app-app-bar>
+
+    <div class="main-content">
+      <div class="title-pacientes">
+        <h4>Pacientes</h4>
+      </div>
+
+      <div class="patient-header">
+        <h5>Pacientes agregados</h5>
+        <mat-icon>arrow_forward</mat-icon>
+        <button mat-flat-button color="primary" (click)="onAddPatient()">
+          <mat-icon>add</mat-icon>
+          Agregar
+        </button>
+      </div>
+
+      <app-patients-list></app-patients-list>
+    </div>
+  </div>
+</app-sidenav>
